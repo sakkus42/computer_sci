@@ -17,6 +17,15 @@ t_que *new_struct(int val)
     return (res);
 }
 
+int size(t_que *l)
+{
+    t_que *iter = l;
+    if (!l)
+        return (0);
+    iter = iter->next;
+    return (1 + size(iter));
+}
+
 void print_struct(t_que *l)
 {
     t_que *iter = l;
@@ -26,6 +35,13 @@ void print_struct(t_que *l)
         sleep(1);
         iter = iter->next;
     }
+}
+
+void    delete(t_que **l)
+{
+    t_que *head = (*l)->next;
+    free(*l);
+    *l = head;
 }
 
 int main(int ac, char *arv[])
@@ -57,14 +73,28 @@ int main(int ac, char *arv[])
     print_struct(que);
     printf("STACK\n");
     print_struct(stack);
+    delete(&stack);
+    delete(&que);
+    printf("QUEUE-first delete\n");
+    print_struct(que);
+    printf("STACK-first delete\n");
+    print_struct(stack);
 }
 
-//  ./a.out 2 1 3
-// QUEUE
-// 2
-// 1
-// 3
-// STACK
-// 3
-// 1
-// 2
+/*
+./a.out 2 1 3
+QUEUE
+2
+1
+3
+STACK
+3
+1
+2
+QUEUE-first delete
+1
+3
+STACK-first delete
+1
+2
+*/ 
