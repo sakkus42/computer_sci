@@ -17,19 +17,6 @@ t_que *new_struct(int val)
     return (res);
 }
 
-// t_que *init_struct(int len, char **arv)
-// {
-//     int i = 0;
-//     t_que *res = new_struct(atoi(arv[i++]));
-//     t_que *iter = res;
-//     while (i < len)
-//     {
-//         iter->next = new_struct(atoi(arv[i++]));
-//         iter = iter->next;
-//     }
-//     return(res);
-// }
-
 void print_struct(t_que *l)
 {
     t_que *iter = l;
@@ -71,3 +58,13 @@ int main(int ac, char *arv[])
     printf("STACK\n");
     print_struct(stack);
 }
+
+//  ./a.out 2 1 3
+// QUEUE
+// 2
+// 1
+// 3
+// STACK
+// 3
+// 1
+// 2
