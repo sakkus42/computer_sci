@@ -94,7 +94,7 @@ int main(int ac, char *arv[])
 }
 
 /*
-╭─/computer_sciense  ‹main*›
+╭─/computer_science  ‹main*›
 ╰─➤  ./a.out 51 1 11 439 429 411 406 393 351 320 314 295 259 197 146 141 134 118 100 36 26 23 10
 val:    100->
 val:    51->val:    1->val:    351->
