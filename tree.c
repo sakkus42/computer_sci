@@ -46,3 +46,8 @@ int main(int ac, char *arv[])
     printf(" %d ->", tree->key);
     print_tree(tree->right_child, "->");
 }
+
+/*
+╰─➤  ./a.out 
+4 <-3 <- 1 ->2 ->
+*/
