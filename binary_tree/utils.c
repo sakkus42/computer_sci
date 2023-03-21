@@ -29,4 +29,3 @@ int height(t_data *t)
         else return (l_height + 1);
     }
 }
-    
