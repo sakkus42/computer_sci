@@ -1,4 +1,32 @@
-#include "binary_tree.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct s_tree{
+    int key;
+    struct s_tree * left_child;
+    struct s_tree * right_child;
+}   t_data;
+
+int height(t_data *t)
+{
+    if (!t) return (0);
+    else{
+        int r_height = height(t->right_child);
+        int l_height = height(t->left_child);
+        if (r_height > l_height) return (r_height + 1);
+        else return (l_height + 1);
+    }
+}
+
+t_data *new_node(int key)
+{
+    t_data *res = malloc(sizeof(t_data));
+    res->key = key;
+    res->left_child = NULL;
+    res->right_child = NULL;
+    return (res);
+}
+
 
 void print_current_level(t_data *t, int level)
 {

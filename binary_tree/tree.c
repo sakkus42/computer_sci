@@ -1,5 +1,32 @@
-#include "binary_tree.h"
-    
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct s_tree{
+    int key;
+    struct s_tree * left_child;
+    struct s_tree * right_child;
+}   t_data;
+
+t_data *new_node(int key)
+{
+    t_data *res = malloc(sizeof(t_data));
+    res->key = key;
+    res->left_child = NULL;
+    res->right_child = NULL;
+    return (res);
+}
+
+void insert_right(t_data *root, int key)
+{
+    root->right_child = new_node(key);
+}
+
+void insert_left(t_data *root, int key)
+{
+    root->left_child = new_node(key);
+}
+
+
 void print_tree(t_data *t, char *str)
 {
     if (!t) return;
